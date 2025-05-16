@@ -65,6 +65,8 @@ def index():
                 <label for="phone">phone:</label><br>
                 <input type="text" id="phone" name="phone" required><br><br>
                 <input type="submit" value="Submit">
+                 <input type="text" id="email" name="email" required><br><br>
+                <input type="submit" value="Submit">
             </form>
             <p>{{ message }}</p>
             {% if contacts %}
@@ -72,12 +74,14 @@ def index():
                     <tr>
                         <th>Name</th>
                         <th>Phone</th>
+                        <th>Email</th>
                         <th>Delete</th>
                     </tr>
                     {% for contact in contacts %}
                         <tr>
                             <td>{{ contact['name'] }}</td>
                             <td>{{ contact['Phone'] }}</td>
+                            <td>{{ contact['email'] }}</td>
                             <td>
                                 <form method="POST" action="/">
                                     <input type="hidden" name="contact_id" value="{{ contact['id'] }}">
