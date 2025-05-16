@@ -11,7 +11,7 @@ def generate_test_data(num_contacts):
     """Generate test data for the contacts table."""
     db = connect_db()
     for i in range(num_contacts):
-        name = f'Test Name {i}'
+        name = f'Cody Stidham {i}'
         phone = f'stidhalt@miamioh.edu{i}'
         db.execute('INSERT INTO contacts (name, phone) VALUES (?, ?)', (name, phone))
     db.commit()
