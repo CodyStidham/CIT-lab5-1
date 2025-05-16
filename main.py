@@ -56,10 +56,10 @@ def index():
         <html>
         <body style="background-color:#36f7ba;">
         <head>
-            <title>Contacts</title>
+            <title>CIT225 Final Project!</title>
         </head>
         <body>
-            <h2>Add Contacts</h2>
+            <h2>Add Emails!</h2>
             <form method="POST" action="/">
                 <label for="name">Name:</label><br>
                 <input type="text" id="name" name="name" required><br>
