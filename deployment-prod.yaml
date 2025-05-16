@@ -57,45 +57,6 @@ spec:
           persistentVolumeClaim:
             claimName: flask-pvc    
 ---
-#LAB 3-2 STUFF
-apiVersion: apps/v1
-kind: Deployment
-metadata:
-  name: dev-deployment
-spec:
-  replicas: 1  # Number of NGINX pods to run
-  selector:
-    matchLabels:
-      app: nginx
-  template:
-    metadata:
-      labels:
-        app: nginx
-    spec:
-      containers:
-      - name: nginx
-        image: cithit/stidhalt:latest   # <-------change this!
-        ports:
-        - containerPort: 80  # Expose NGINX on port 80      
----
-apiVersion: networking.k8s.io/v1
-kind: Ingress
-metadata:
-  name: nginx
-spec:
-  rules: 
-  - host: 
-    http:
-      paths:
-      - path: /
-        pathType: ImplementationSpecific
-        backend: 
-          service:
-            name: dev-service
-            port:
-              number: 80
-#END OF LAB 3-2 STUFF
----
 apiVersion: v1
 kind: Service
 metadata:
