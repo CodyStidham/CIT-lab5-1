@@ -1,3 +1,8 @@
+#LAB 3-2
+FROM nginx:alpine
+WORKDIR /usr/share/nginx/html
+#LAB 3-2
+
 FROM python:3.9-slim
 
 # Install dependencies
