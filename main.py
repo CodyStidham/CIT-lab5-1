@@ -73,7 +73,6 @@ def index():
                 <table border="1">
                     <tr>
                         <th>Name</th>
-                        <th>Phone</th>
                         <th>Email</th>
                         <th>Delete</th>
                     </tr>
@@ -81,7 +80,6 @@ def index():
                         <tr>
                             <td>{{ contact['name'] }}</td>
                             <td>{{ contact['Phone'] }}</td>
-                            <td>{{ contact['email'] }}</td>
                             <td>
                                 <form method="POST" action="/">
                                     <input type="hidden" name="contact_id" value="{{ contact['id'] }}">
