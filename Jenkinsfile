@@ -5,7 +5,7 @@ pipeline {
         DOCKER_CREDENTIALS_ID = 'roseaw-dockerhub'  
         DOCKER_IMAGE = 'cithit/stidhalt'                                   //<-----change this to your MiamiID!
         IMAGE_TAG = "build-${BUILD_NUMBER}"
-        GITHUB_URL = 'https://github.com/CodyStidham/225-lab5-1.git'     //<-----change this to match this new repository!
+        GITHUB_URL = 'https://github.com/CodyStidham/CIT-lab5-1.git'     //<-----change this to match this new repository!
         KUBECONFIG = credentials('stidhalt-225')                           //<-----change this to match your kubernetes credentials (MiamiID-225)! 
     }
 
