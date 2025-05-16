@@ -19,8 +19,7 @@ def init_db():
             CREATE TABLE IF NOT EXISTS contacts (
                 id INTEGER PRIMARY KEY AUTOINCREMENT,
                 name TEXT NOT NULL,
-                phone TEXT NOT NULL,
-                email TEXT NOT NULL
+                phone TEXT NOT NULL
             );
         ''')
         db.commit()
@@ -39,14 +38,13 @@ def index():
         else:
             name = request.form.get('name')
             phone = request.form.get('phone')
-            email = request.form.get('email')
             if name and phone:
                 db = get_db()
-                db.execute('INSERT INTO contacts (name, phone, email) VALUES (?, ?, ?)', (name, phone, email))
+                db.execute('INSERT INTO contacts (name, phone) VALUES (?, ?)', (name, phone))
                 db.commit()
                 message = 'Contact added successfully.'
             else:
-                message = 'Missing name, phone number, or email.'
+                message = 'Missing name or phone number.'
 
     # Always display the contacts table
     db = get_db()
@@ -56,6 +54,7 @@ def index():
     return render_template_string('''
         <!DOCTYPE html>
         <html>
+        <body style="background-color:#36f7ba;">
         <head>
             <title>Contacts</title>
         </head>
@@ -66,7 +65,7 @@ def index():
                 <input type="text" id="name" name="name" required><br>
                 <label for="phone">Phone:</label><br>
                 <input type="text" id="phone" name="phone" required><br><br>
-                <label for="email">Email:</label><br>
+                <label for="Email">Email:</label><br>
                 <input type="text" id="email" name="email" required><br><br>
                 <input type="submit" value="Submit">
             </form>
