@@ -19,4 +19,4 @@ def generate_test_data(num_contacts):
     db.close()
 
 if __name__ == '__main__':
-    generate_test_data(10)  # Generate 10 test contacts.
+    generate_test_data(20)  # Generate 20 test contacts.
